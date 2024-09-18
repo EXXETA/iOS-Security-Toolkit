@@ -1,0 +1,496 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "SecurityToolkit",
+    "printedName": "SecurityToolkit",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SecurityToolkit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SecurityToolkit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ThreatDetectionCenter",
+        "printedName": "ThreatDetectionCenter",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "areRootPrivilegesDetected",
+            "printedName": "areRootPrivilegesDetected",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15SecurityToolkit21ThreatDetectionCenterC25areRootPrivilegesDetectedSbvpZ",
+            "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC25areRootPrivilegesDetectedSbvpZ",
+            "moduleName": "SecurityToolkit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15SecurityToolkit21ThreatDetectionCenterC25areRootPrivilegesDetectedSbvgZ",
+                "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC25areRootPrivilegesDetectedSbvgZ",
+                "moduleName": "SecurityToolkit",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "areHooksDetected",
+            "printedName": "areHooksDetected",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15SecurityToolkit21ThreatDetectionCenterC16areHooksDetectedSbvpZ",
+            "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC16areHooksDetectedSbvpZ",
+            "moduleName": "SecurityToolkit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15SecurityToolkit21ThreatDetectionCenterC16areHooksDetectedSbvgZ",
+                "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC16areHooksDetectedSbvgZ",
+                "moduleName": "SecurityToolkit",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isSimulatorDetected",
+            "printedName": "isSimulatorDetected",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15SecurityToolkit21ThreatDetectionCenterC19isSimulatorDetectedSbvpZ",
+            "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC19isSimulatorDetectedSbvpZ",
+            "moduleName": "SecurityToolkit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15SecurityToolkit21ThreatDetectionCenterC19isSimulatorDetectedSbvgZ",
+                "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC19isSimulatorDetectedSbvgZ",
+                "moduleName": "SecurityToolkit",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "Threat",
+            "printedName": "Threat",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "rootPrivileges",
+                "printedName": "rootPrivileges",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(SecurityToolkit.ThreatDetectionCenter.Threat.Type) -> SecurityToolkit.ThreatDetectionCenter.Threat",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Threat",
+                        "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat",
+                        "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Threat",
+                            "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat",
+                            "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O14rootPrivilegesyA2EmF",
+                "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC0C0O14rootPrivilegesyA2EmF",
+                "moduleName": "SecurityToolkit"
+              },
+              {
+                "kind": "Var",
+                "name": "hooks",
+                "printedName": "hooks",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(SecurityToolkit.ThreatDetectionCenter.Threat.Type) -> SecurityToolkit.ThreatDetectionCenter.Threat",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Threat",
+                        "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat",
+                        "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Threat",
+                            "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat",
+                            "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O5hooksyA2EmF",
+                "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC0C0O5hooksyA2EmF",
+                "moduleName": "SecurityToolkit"
+              },
+              {
+                "kind": "Var",
+                "name": "simulator",
+                "printedName": "simulator",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(SecurityToolkit.ThreatDetectionCenter.Threat.Type) -> SecurityToolkit.ThreatDetectionCenter.Threat",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Threat",
+                        "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat",
+                        "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Threat",
+                            "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat",
+                            "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O9simulatoryA2EmF",
+                "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC0C0O9simulatoryA2EmF",
+                "moduleName": "SecurityToolkit"
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(rawValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Threat",
+                        "printedName": "SecurityToolkit.ThreatDetectionCenter.Threat",
+                        "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O8rawValueAESgSS_tcfc",
+                "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC0C0O8rawValueAESgSS_tcfc",
+                "moduleName": "SecurityToolkit",
+                "implicit": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Var",
+                "name": "rawValue",
+                "printedName": "rawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O8rawValueSSvp",
+                "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC0C0O8rawValueSSvp",
+                "moduleName": "SecurityToolkit",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O8rawValueSSvg",
+                    "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC0C0O8rawValueSSvg",
+                    "moduleName": "SecurityToolkit",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:15SecurityToolkit21ThreatDetectionCenterC0C0O",
+            "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC0C0O",
+            "moduleName": "SecurityToolkit",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "enumRawTypeName": "String",
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "RawRepresentable",
+                "printedName": "RawRepresentable",
+                "children": [
+                  {
+                    "kind": "TypeWitness",
+                    "name": "RawValue",
+                    "printedName": "RawValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:SY",
+                "mangledName": "$sSY"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15SecurityToolkit21ThreatDetectionCenterC",
+        "mangledName": "$s15SecurityToolkit21ThreatDetectionCenterC",
+        "moduleName": "SecurityToolkit",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SecurityToolkit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SecurityToolkit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MachO",
+        "printedName": "MachO",
+        "declKind": "Import",
+        "moduleName": "SecurityToolkit"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SecurityToolkit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SecurityToolkit"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}

@@ -1,0 +1,15 @@
+// MARK: Threats
+"threat.jailbreak.title" = "Jailbreak";
+"threat.jailbreak.description" = "Is a way of acquiring privileged control over the operating system of a device. Tools such as Magisk or Shadow can hide the privileged access";
+"threat.hooks.title" = "Hooks";
+"threat.hooks.description" = "Intercept system or application calls and then modify them (modify the return value of a function call for example)";
+"threat.simulator.title" = "Simulator";
+"threat.simulator.description" = "Running the application in a simulator";
+
+// MARK: Threat List
+"threat.list.title" = "Protection";
+"threat.list.description" = "Here is a list of the threats that could put you at risk";
+
+// MARK: Threat Row
+"threat.row.state.detected" = "DETECTED";
+"threat.row.state.safe" = "SAFE";
