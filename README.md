@@ -9,6 +9,14 @@ Security Suite is an open-source project designed to work on mobile security by
 providing a developer-friendly, all-in-one repository for developers and 
 security experts.
 
+> [!] Notice
+> This Version of Mobile Security Toolkit depends on a private part. It is 
+> planned to be open-sourced later. Please follow [Feature Request Issue](https://github.com/EXXETA/iOS-Security-Toolkit/issues/1) 
+> to be updated about status of the project
+
+This project is based on the [OWASP guide](https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md)
+to the mobile security.
+
 ## Features
 
 Already implemented Features are:
