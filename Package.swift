@@ -14,9 +14,8 @@ let package = Package(
         ),
     ],
     targets: [
-        .binaryTarget(
-            name: "SecurityToolkit",
-            path: "SecurityToolkit.xcframework"
+        .target(
+            name: "SecurityToolkit"
         )
     ]
 )
