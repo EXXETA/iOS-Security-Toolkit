@@ -1,18 +1,16 @@
 # Mobile Security Toolkit
 
+![License](https://img.shields.io/github/license/EXXETA/Android-Security-Toolkit.svg?style=flat-square)
+![Release](https://img.shields.io/github/release/EXXETA/Android-Security-Toolkit.svg?style=flat-square)
+
 <img src="./docs/1.png" width=300  alt="screenshot"/>
 
 In a world where mobile devices hold vast amounts of personal and 
 business-critical data, security is no longer optional — it's essential.
 
-Security Suite is an open-source project designed to work on mobile security by 
+iOS Security Toolkit is an open-source project designed to work on mobile security by 
 providing a developer-friendly, all-in-one repository for developers and 
 security experts.
-
-> [!IMPORTANT]
-> This Version of Mobile Security Toolkit depends on a private part. It is 
-> planned to be open-sourced later. Please follow [Feature Request Issue](https://github.com/EXXETA/iOS-Security-Toolkit/issues/1) 
-> to be updated about status of the project
 
 This project is based on the [OWASP guide](https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md)
 to the mobile security.
@@ -34,7 +32,15 @@ Swift Package Manager
 ### SPM
 
 `.package(url: "https://github.com/EXXETA/iOS-Security-Toolkit.git", from: 
-"1.0.0")`
+"1.0.1")`
+
+## CocoaPods
+
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate iOSSecurityToolkit into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+pod 'Alamofire'
+```
 
 ## Usage
 

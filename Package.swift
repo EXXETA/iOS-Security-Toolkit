@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "SecurityToolkit",
     platforms: [
-        .iOS(.v12),
+        .iOS(.v13),
     ],
     products: [
         .library(
@@ -14,9 +14,8 @@ let package = Package(
         ),
     ],
     targets: [
-        .binaryTarget(
-            name: "SecurityToolkit",
-            path: "SecurityToolkit.xcframework"
+        .target(
+            name: "SecurityToolkit"
         )
     ]
 )
