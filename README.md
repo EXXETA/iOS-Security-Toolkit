@@ -32,7 +32,7 @@ Swift Package Manager
 ### SPM
 
 `.package(url: "https://github.com/EXXETA/iOS-Security-Toolkit.git", from: 
-"1.0.0")`
+"1.0.1")`
 
 ## CocoaPods
 
