@@ -22,6 +22,11 @@ struct ThreatStatus: Hashable {
             description: R.string.localizable.threatSimulatorDescription(),
             isDetected: ThreatDetectionCenter.isSimulatorDetected
         ),
+        ThreatStatus(
+            title: R.string.localizable.threatDebuggerTitle(),
+            description: R.string.localizable.threatDebuggerDescription(),
+            isDetected: ThreatDetectionCenter.isDebuggerAttached
+        ),
     ]
 }
 

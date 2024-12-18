@@ -5,6 +5,8 @@
 "threat.hooks.description" = "Intercept system or application calls and then modify them (modify the return value of a function call for example)";
 "threat.simulator.title" = "Simulator";
 "threat.simulator.description" = "Running the application in a simulator";
+"threat.debugger.title" = "Debugger";
+"threat.debugger.description" = "A tool that allows developers to inspect and modify the execution of a program in real-time, potentially exposing sensitive data or allowing unauthorized control.";
 
 // MARK: Threat List
 "threat.list.title" = "Protection";
