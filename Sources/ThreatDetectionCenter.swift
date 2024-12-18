@@ -14,6 +14,15 @@ public final class ThreatDetectionCenter {
         SimulatorDetection.threatDetected()
     }
     
+    /// Checks whether your application is being traced by a debugger.
+    ///
+    /// A debugger is a tool that allows developers to inspect and modify the execution of a program in real-time, potentially exposing sensitive data or allowing unauthorized control.
+    ///
+    /// Please note that Apple itself uses a debugger during a review and you could prevent Apple from carrying out a complete review. Which Apple will certainly not like.
+    public static var isDebuggerDetected: Bool {
+        DebuggerDetection.threatDetected()
+    }
+    
 	
 	// MARK: - Async Threat Detection
 	
@@ -22,6 +31,7 @@ public final class ThreatDetectionCenter {
         case rootPrivileges
         case hooks
         case simulator
+        case debugger
     }
 	
 	/// Stream that contains possible threats that could be detected
@@ -38,6 +48,10 @@ public final class ThreatDetectionCenter {
             
             if SimulatorDetection.threatDetected() {
                 continuation.yield(.simulator)
+            }
+            
+            if DebuggerDetection.threatDetected() {
+                continuation.yield(.debugger)
             }
             
             continuation.finish()
