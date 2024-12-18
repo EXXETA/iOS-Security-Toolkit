@@ -22,6 +22,7 @@ fileprivate extension DebuggerDetection {
         let result = sysctl(&mib, u_int(mib.count), &info, &size, nil, 0)
         if result != 0 {
             fatalError("sysctl failed")
+            // Better to return false?
         }
         
         return (info.kp_proc.p_flag & P_TRACED) != 0

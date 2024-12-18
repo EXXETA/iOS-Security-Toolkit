@@ -14,6 +14,10 @@ public final class ThreatDetectionCenter {
         SimulatorDetection.threatDetected()
     }
     
+    public static var isDebuggerAttached: Bool {
+        DebuggerDetection.threatDetected()
+    }
+    
 	
 	// MARK: - Async Threat Detection
 	
@@ -22,6 +26,7 @@ public final class ThreatDetectionCenter {
         case rootPrivileges
         case hooks
         case simulator
+        case debugger
     }
 	
 	/// Stream that contains possible threats that could be detected
@@ -38,6 +43,10 @@ public final class ThreatDetectionCenter {
             
             if SimulatorDetection.threatDetected() {
                 continuation.yield(.simulator)
+            }
+            
+            if DebuggerDetection.threatDetected() {
+                continuation.yield(.debugger)
             }
             
             continuation.finish()
