@@ -1,5 +1,4 @@
 import Foundation
-import Darwin
 
 // MARK: - Internal
 internal final class DebuggerDetection {
