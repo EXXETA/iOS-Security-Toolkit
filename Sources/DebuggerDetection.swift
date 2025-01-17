@@ -14,7 +14,7 @@ fileprivate extension DebuggerDetection {
     
     /// Check P_TRACED flag from Darwin Kernel
     /// if the process is traced
-    static func hasTracerFlagSet() -> Bool {
+    private static func hasTracerFlagSet() -> Bool {
         var info = kinfo_proc()
         var mib: [Int32] = [CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()] // Kernel info, process info, specific process by PID, get current process ID
         var size = MemoryLayout.stride(ofValue: info)
