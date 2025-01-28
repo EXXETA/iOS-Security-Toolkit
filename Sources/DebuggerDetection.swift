@@ -3,7 +3,7 @@ import Foundation
 // MARK: - Internal
 internal final class DebuggerDetection {
     
-    static func threatDetected() -> Bool {
+    static func threatDetected() -> Bool? {
         hasTracerFlagSet()
     }
 }
@@ -13,17 +13,13 @@ fileprivate extension DebuggerDetection {
     
     /// Check P_TRACED flag from Darwin Kernel
     /// if the process is traced
-    private static func hasTracerFlagSet() -> Bool {
+    private static func hasTracerFlagSet() -> Bool? {
         var info = kinfo_proc()
         var mib: [Int32] = [CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()] // Kernel info, process info, specific process by PID, get current process ID
         var size = MemoryLayout.stride(ofValue: info)
         
-        let result = sysctl(&mib, u_int(mib.count), &info, &size, nil, 0)
-        if result != 0 {
-            fatalError("sysctl failed")
-            // Better to return false?
-        }
+        let unixStatusCode = sysctl(&mib, u_int(mib.count), &info, &size, nil, 0)
         
-        return (info.kp_proc.p_flag & P_TRACED) != 0
+        return unixStatusCode == 0 ? (info.kp_proc.p_flag & P_TRACED) != 0 : nil
     }
 }

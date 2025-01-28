@@ -15,12 +15,17 @@ public final class ThreatDetectionCenter {
     }
     
     /// Will check if your application is being traced by a debugger.
-    /// Returns true if a debugger is detected.
+    ///
+    /// - Returns:
+    ///   `true`: If a debugger is detected.
+    ///   `false`: If no debugger is detected.
+    ///   `nil`: The detection process did not produce a definitive result. This could happen due to system limitations, lack of required permissions, or other undefined conditions.
     ///
     /// A debugger is a tool that allows developers to inspect and modify the execution of a program in real-time, potentially exposing sensitive data or allowing unauthorized control.
     ///
+    /// ## Notes
     /// Please note that Apple itself may require a debugger for the app review process.
-    public static var isDebuggerDetected: Bool {
+    public static var isDebuggerDetected: Bool? {
         DebuggerDetection.threatDetected()
     }
     
@@ -51,7 +56,7 @@ public final class ThreatDetectionCenter {
                 continuation.yield(.simulator)
             }
             
-            if DebuggerDetection.threatDetected() {
+            if DebuggerDetection.threatDetected() ?? false {
                 continuation.yield(.debugger)
             }
             
