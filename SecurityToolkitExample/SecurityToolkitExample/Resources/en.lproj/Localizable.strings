@@ -7,6 +7,8 @@
 "threat.simulator.description" = "Running the application in a simulator";
 "threat.debugger.title" = "Debugger";
 "threat.debugger.description" = "A tool that allows developers to inspect and modify the execution of a program in real-time, potentially exposing sensitive data or allowing unauthorized control.";
+"threat.unprotectedDevice.title" = "Unprotected device";
+"threat.unprotectedDevice.description" = "Indicates if current device is password-protected. Biometric protection requires a passcode to be set up";
 
 // MARK: Threat List
 "threat.list.title" = "Protection";
