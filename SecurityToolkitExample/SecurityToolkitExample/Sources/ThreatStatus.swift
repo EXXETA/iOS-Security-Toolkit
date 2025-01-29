@@ -32,6 +32,11 @@ struct ThreatStatus: Hashable {
             description: R.string.localizable.threatUnprotectedDeviceDescription(),
             isDetected: ThreatDetectionCenter.isUnprotectedDeviceDetected
         ),
+        ThreatStatus(
+            title: R.string.localizable.threatHardwareTitle(),
+            description: R.string.localizable.threatHardwareDescription(),
+            isDetected: ThreatDetectionCenter.isHardwareProtectionUnavailable
+        ),
     ]
 }
 

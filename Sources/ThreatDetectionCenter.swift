@@ -68,10 +68,30 @@ public final class ThreatDetectionCenter {
     /// Will check, if current device is protected with at least a passcode
     ///
     /// - Returns:
-    ///  `true`: if device is unprotected;
-    ///  `false`: if device is protected with at least a passcode
+    ///  `true`, if device is unprotected;
+    ///  `false`, if device is protected with at least a passcode
     public static var isUnprotectedDeviceDetected: Bool {
         DevicePasscodeDetection.threatDetected()
+    }
+    
+    /// Will check, if current device has hardware protection layer
+    /// (Secure Enclave)
+    ///
+    /// More: https://support.apple.com/en-us/guide/security/secf020d1074/web
+    /// More: https://developer.apple.com/documentation/security/protecting-keys-with-the-secure-enclave
+    ///
+    /// - Returns:
+    ///  `true`, if device has no hardware protection;
+    ///  `false` otherwise
+    ///
+    /// ## Notes
+    /// Should be evaluated on a real device. Should only be used as an
+    /// indicator, if current device is capable of hardware protection. Does not
+    /// automatically mean, that encryption operations (keys, certificates,
+    /// keychain) are always backed by hardware. You should make sure, such
+    /// operations are implemented correctly with hardware layer
+    public static var isHardwareProtectionUnavailable: Bool {
+        HardwareSecurityDetection.threatDetected()
     }
     
 	
@@ -84,6 +104,7 @@ public final class ThreatDetectionCenter {
         case simulator
         case debugger
         case unprotectedDevice
+        case hardwareProtectionUnavailable
     }
 	
 	/// Stream that contains possible threats that could be detected
@@ -108,6 +129,10 @@ public final class ThreatDetectionCenter {
 
             if DevicePasscodeDetection.threatDetected() {
                 continuation.yield(.unprotectedDevice)
+            }
+            
+            if HardwareSecurityDetection.threatDetected() {
+                continuation.yield(.hardwareProtectionUnavailable)
             }
 
             continuation.finish()
