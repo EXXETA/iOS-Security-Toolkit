@@ -28,9 +28,9 @@ struct ThreatStatus: Hashable {
             isDetected: ThreatDetectionCenter.isDebuggerDetected ?? false
         ),
         ThreatStatus(
-            title: R.string.localizable.threatUnprotectedDeviceTitle(),
-            description: R.string.localizable.threatUnprotectedDeviceDescription(),
-            isDetected: ThreatDetectionCenter.isUnprotectedDeviceDetected
+            title: R.string.localizable.threatPasscodeUnprotectedDeviceTitle(),
+            description: R.string.localizable.threatPasscodeUnprotectedDeviceDescription(),
+            isDetected: ThreatDetectionCenter.isDeviceWithoutPasscodeDetected
         ),
         ThreatStatus(
             title: R.string.localizable.threatHardwareTitle(),

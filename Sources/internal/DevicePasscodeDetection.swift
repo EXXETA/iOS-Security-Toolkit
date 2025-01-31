@@ -22,8 +22,8 @@ fileprivate extension DevicePasscodeDetection {
         )
         if result {
             return true
-        } else if let e = error {
-            return e.code != LAError.passcodeNotSet.rawValue
+        } else if let error {
+            return error.code != LAError.passcodeNotSet.rawValue
         } else {
             return false
         }

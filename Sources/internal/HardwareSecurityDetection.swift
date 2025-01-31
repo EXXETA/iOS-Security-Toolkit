@@ -26,12 +26,8 @@ fileprivate extension HardwareSecurityDetection {
         )
         if result {
             return true
-        } else if let e = error {
-            if #available(iOS 11, *) {
-                return e.code != LAError.biometryNotAvailable.rawValue
-            } else {
-                return e.code != LAError.touchIDNotAvailable.rawValue
-            }
+        } else if let error {
+            return error.code != LAError.biometryNotAvailable.rawValue
         } else {
             return false
         }
