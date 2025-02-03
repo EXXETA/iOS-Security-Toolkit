@@ -15,7 +15,8 @@ fileprivate extension DebuggerDetection {
     /// if the process is traced
     private static func hasTracerFlagSet() -> Bool? {
         var info = kinfo_proc()
-        var mib: [Int32] = [CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()] // Kernel info, process info, specific process by PID, get current process ID
+        // Kernel info, process info, specific process by PID, get current process ID
+        var mib: [Int32] = [CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()]
         var size = MemoryLayout.stride(ofValue: info)
         
         let unixStatusCode = sysctl(&mib, u_int(mib.count), &info, &size, nil, 0)

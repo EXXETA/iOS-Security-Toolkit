@@ -6,7 +6,11 @@
 "threat.simulator.title" = "Simulator";
 "threat.simulator.description" = "Running the application in a simulator";
 "threat.debugger.title" = "Debugger";
-"threat.debugger.description" = "A tool that allows developers to inspect and modify the execution of a program in real-time, potentially exposing sensitive data or allowing unauthorized control.";
+"threat.debugger.description" = "A tool that allows developers to inspect and modify the execution of a program in real-time, potentially exposing sensitive data or allowing unauthorized control";
+"threat.passcodeUnprotectedDevice.title" = "Passcode";
+"threat.passcodeUnprotectedDevice.description" = "Indicates if current device is unprotected with a passcode. Biometric protection requires a passcode to be set up";
+"threat.hardware.title" = "Hardware protection";
+"threat.hardware.description" = "Refers to hardware capabilities of current device, specific to Secure Enclave layer. If not available, no additional hardware security layer can be used when working with keys, certificates and keychain";
 
 // MARK: Threat List
 "threat.list.title" = "Protection";
