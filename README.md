@@ -2,6 +2,9 @@
 
 ![License](https://img.shields.io/github/license/EXXETA/Android-Security-Toolkit.svg?style=flat-square)
 ![Release](https://img.shields.io/github/release/EXXETA/Android-Security-Toolkit.svg?style=flat-square)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FEXXETA%2FiOS-Security-Toolkit%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/EXXETA/iOS-Security-Toolkit)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FEXXETA%2FiOS-Security-Toolkit%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/EXXETA/iOS-Security-Toolkit)
+
 
 <img src="./docs/1.png" width=300  alt="screenshot"/>
 
@@ -35,7 +38,7 @@ Swift Package Manager
 ### SPM
 
 `.package(url: "https://github.com/EXXETA/iOS-Security-Toolkit.git", from: 
-"1.1.1")`
+"2.0.0")`
 
 ## CocoaPods
 

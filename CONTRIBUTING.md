@@ -55,12 +55,6 @@ and reference the old one instead.
 
 ## Development
 
-This project contains a private code, not available for public reading or 
-editing. Please unterstand this measurement to prevent security risks. 
-Developing new features or fixing bugs can be done in both private and public 
-parts of this project. You are welcome to participate in public part!  
-
-
 ### Setup
 
 Please use the latest Xcode Version. Use the provided example project to test 
