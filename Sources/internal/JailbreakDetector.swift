@@ -2,15 +2,16 @@ import Foundation
 import UIKit
 
 // MARK: - Internal
-internal final class JailbreakDetection {
+internal final class JailbreakDetector {
     
-    static func threatDetected() -> Bool {
-        hasSuspiciousFiles() || hasUnexpectedFilePermissions() || canOpenSuspiciousLinks()
+    static func threatDetected() -> ThreatStatus {
+        let check = hasSuspiciousFiles() || hasUnexpectedFilePermissions() || canOpenSuspiciousLinks()
+        return check ? .present : .notPresent
     }
 }
 
 // MARK: - Private
-fileprivate extension JailbreakDetection {
+fileprivate extension JailbreakDetector {
     
     /// Check for suspicious files
     static func hasSuspiciousFiles() -> Bool {

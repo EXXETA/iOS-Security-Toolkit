@@ -1,26 +1,89 @@
 import Foundation
+import Combine
 
 public final class ThreatDetectionCenter {
+    
+    private init() {}
+    
+    static private var delaySeconds = 5
+    
+    // MARK: - Async Threat Detection
+
+    // Private publisher for sending temperature updates
+    static private let reportPublisher = CurrentValueSubject<ThreatReport, Never>(ThreatReport())
+
+    static private var task: Task<(), Never>?
+    
+    /// Time to wait for cycle recheck threads before running check again
+    /// > Should be positive and greater than 0
+    static public var threatReportsRegenerationDelaySeconds: Int {
+        get { delaySeconds }
+        set { if newValue >= 1 { delaySeconds = newValue } }
+    }
+    
+    /// Use this API to get ThreatReports
+    ///
+    /// > First access will start Tasks and cache the result.
+    /// Next calls will not start any additional Tasks. Original result
+    /// will be cached and can be reused
+    static public var threatReports: AnyPublisher<ThreatReport, Never> {
+        if task != nil {
+            return reportPublisher.eraseToAnyPublisher()
+        }
+        task = Task {
+            Task {
+                repeat {
+                    let status = JailbreakDetector.threatDetected()
+                    reportPublisher.update { $0.copy(rootPrivileges: status) }
+                    await insertDelay()
+                } while !Task.isCancelled
+            }
+            Task {
+                repeat {
+                    let status = HooksDetector.threatDetected()
+                    reportPublisher.update { $0.copy(hooks: status) }
+                    await insertDelay()
+                } while !Task.isCancelled
+            }
+            Task {
+                let status = SimulatorDetector.threatDetected()
+                reportPublisher.update { $0.copy(simulator: status) }
+            }
+            Task {
+                repeat {
+                    let status = DebuggerDetector.threatDetected()
+                    reportPublisher.update { $0.copy(debugger: status) }
+                    await insertDelay()
+                } while !Task.isCancelled
+            }
+            Task {
+                repeat {
+                    let status = DevicePasscodeDetector.threatDetected()
+                    reportPublisher.update { $0.copy(devicePasscode: status) }
+                    await insertDelay()
+                } while !Task.isCancelled
+            }
+            Task {
+                let status = HardwareSecurityDetector.threatDetected()
+                reportPublisher.update { $0.copy(hardwareCryptography: status) }
+            }
+        }
+        return reportPublisher.eraseToAnyPublisher()
+    }
+    
+    // MARK: - Sync API
 
     /// Will check if jailbreak is present
-    ///
-    /// - Returns:
-    ///  `true`, if device is / was jailbroken;
-    ///  `false` otherwise
     ///
     /// More about jailbreak: https://wikipedia.org/wiki/Jailbreak_%28iOS%29
     ///
     /// > Should also detect jailbreak, even if the device is in a "safe" mode or
     /// jailbreak mode is not active / was not properly removed
-    public static var areRootPrivilegesDetected: Bool {
-        JailbreakDetection.threatDetected()
+    public static var rootPrivilegesStatus: ThreatStatus {
+        JailbreakDetector.threatDetected()
     }
 
     /// Will check for an injection tool like Frida
-    ///
-    /// - Returns:
-    ///  `true`, if dynamic hooks are loaded at the time;
-    ///  `false` otherwise
     ///
     /// More: https://fingerprint.com/blog/exploring-frida-dynamic-instrumentation-tool-kit/
     ///
@@ -30,27 +93,16 @@ public final class ThreatDetectionCenter {
     ///
     /// > Important: with a sufficient reverse engineering skills, this check can
     /// be disabled. Use always in combination with another threats detections.
-    public static var areHooksDetected: Bool {
-        HooksDetection.threatDetected()
+    public static var hooksStatus: ThreatStatus {
+        HooksDetector.threatDetected()
     }
 
     /// Will check, if the app runs in a emulated / simulated environment
-    ///
-    /// - Returns:
-    ///  `true`, if simulator environment is detected;
-    ///  `false` otherwise
-    public static var isSimulatorDetected: Bool {
-        SimulatorDetection.threatDetected()
+    public static var simulatorStatus: ThreatStatus {
+        SimulatorDetector.threatDetected()
     }
     
     /// Will check, if the application is being traced by a debugger.
-    ///
-    /// - Returns:
-    ///   `true`, if a debugger is detected;
-    ///   `false`, if no debugger is detected;
-    ///   `nil`, if the detection process did not produce a definitive result.
-    ///   This could happen due to system limitations, lack of required
-    ///   permissions, or other undefined conditions.
     ///
     /// A debugger is a tool that allows developers to inspect and modify the
     /// execution of a program in real-time, potentially exposing sensitive data
@@ -58,17 +110,13 @@ public final class ThreatDetectionCenter {
     ///
     /// > Please note that Apple itself may require a debugger for the app review
     /// process.
-    public static var isDebuggerDetected: Bool? {
-        DebuggerDetection.threatDetected()
+    public static var debuggerStatus: ThreatStatus {
+        DebuggerDetector.threatDetected()
     }
 
     /// Will check, if current device is protected with at least a passcode
-    ///
-    /// - Returns:
-    ///  `true`, if device is unprotected;
-    ///  `false`, if device is protected with at least a passcode
-    public static var isDeviceWithoutPasscodeDetected: Bool {
-        DevicePasscodeDetection.threatDetected()
+    public static var devicePasscodeStatus: ThreatStatus {
+        DevicePasscodeDetector.threatDetected()
     }
     
     /// Will check, if current device has hardware protection layer
@@ -78,61 +126,33 @@ public final class ThreatDetectionCenter {
     ///
     /// More: https://developer.apple.com/documentation/security/protecting-keys-with-the-secure-enclave
     ///
-    /// - Returns:
-    ///  `true`, if device has no hardware protection;
-    ///  `false` otherwise
-    ///
     /// > Should be evaluated on a real device. Should only be used as an
     /// indicator, if current device is capable of hardware protection. Does not
     /// automatically mean, that encryption operations (keys, certificates,
     /// keychain) are always backed by hardware. You should make sure, such
     /// operations are implemented correctly with hardware layer
-    public static var isHardwareProtectionUnavailable: Bool {
-        HardwareSecurityDetection.threatDetected()
-    }
-    
-	
-	// MARK: - Async Threat Detection
-	
-	/// Defines all possible threats, that can be reported via the stream
-    public enum Threat: String {
-        case rootPrivileges
-        case hooks
-        case simulator
-        case debugger
-        case deviceWithoutPasscode
-        case hardwareProtectionUnavailable
+    public static var hardwareCryptographyStatus: ThreatStatus {
+        HardwareSecurityDetector.threatDetected()
     }
 	
-	/// Stream that contains possible threats that could be detected
-    public static var threats: AsyncStream<Threat> {
-        AsyncStream<Threat> { continuation in
-            
-            if JailbreakDetection.threatDetected() {
-                continuation.yield(.rootPrivileges)
-            }
-            
-            if HooksDetection.threatDetected() {
-                continuation.yield(.hooks)
-            }
-            
-            if SimulatorDetection.threatDetected() {
-                continuation.yield(.simulator)
-            }
-            
-            if DebuggerDetection.threatDetected() ?? false {
-                continuation.yield(.debugger)
-            }
+    // MARK: - Private API
 
-            if DevicePasscodeDetection.threatDetected() {
-                continuation.yield(.deviceWithoutPasscode)
-            }
-            
-            if HardwareSecurityDetection.threatDetected() {
-                continuation.yield(.hardwareProtectionUnavailable)
-            }
+    static private func insertDelay() async {
+        try? await Task.sleep(nanoseconds: UInt64(delaySeconds) * NSEC_PER_SEC)
+    }
+}
 
-            continuation.finish()
+fileprivate extension CurrentValueSubject where Output: Equatable {
+    func update(_ callback: (Output) -> Output) {
+        while true {
+            let value = self.value
+            let newValue = callback(value)
+            if value == newValue {
+                return
+            } else if self.value == value {
+                self.value = newValue
+                return
+            }
         }
     }
 }
