@@ -12,11 +12,12 @@
 		42B973FC2C57C4380040D9BC /* ThreatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B973FB2C57C4380040D9BC /* ThreatList.swift */; };
 		42B973FE2C57C4390040D9BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B973FD2C57C4390040D9BC /* Assets.xcassets */; };
 		42C3DCE12C5A877B00973681 /* ThreatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C3DCE02C5A877B00973681 /* ThreatRow.swift */; };
-		42C3DCE32C5A87B200973681 /* ThreatStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C3DCE22C5A87B200973681 /* ThreatStatus.swift */; };
+		42C3DCE32C5A87B200973681 /* ThreatOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C3DCE22C5A87B200973681 /* ThreatOverview.swift */; };
 		42C3DCE52C5A892D00973681 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C3DCE42C5A892D00973681 /* Dimens.swift */; };
 		42C3DCE82C5CE54B00973681 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 42C3DCE72C5CE54B00973681 /* RswiftLibrary */; };
 		42C3DCED2C5CE6F500973681 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42C3DCEB2C5CE6F500973681 /* Localizable.strings */; };
 		42C3DCF52C5CEFE200973681 /* SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C3DCF42C5CEFE200973681 /* SystemImage.swift */; };
+		882CEB5F2D536FF0005D7171 /* ThreatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CEB5D2D536FE8005D7171 /* ThreatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +26,11 @@
 		42B973FB2C57C4380040D9BC /* ThreatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatList.swift; sourceTree = "<group>"; };
 		42B973FD2C57C4390040D9BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42C3DCE02C5A877B00973681 /* ThreatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatRow.swift; sourceTree = "<group>"; };
-		42C3DCE22C5A87B200973681 /* ThreatStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatStatus.swift; sourceTree = "<group>"; };
+		42C3DCE22C5A87B200973681 /* ThreatOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatOverview.swift; sourceTree = "<group>"; };
 		42C3DCE42C5A892D00973681 /* Dimens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		42C3DCEC2C5CE6F500973681 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		42C3DCF42C5CEFE200973681 /* SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImage.swift; sourceTree = "<group>"; };
+		882CEB5D2D536FE8005D7171 /* ThreatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +91,11 @@
 		42C3DCEA2C5CE64300973681 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				882CEB5D2D536FE8005D7171 /* ThreatViewModel.swift */,
 				42B973F92C57C4380040D9BC /* SecurityToolkitExampleApp.swift */,
 				42B973FB2C57C4380040D9BC /* ThreatList.swift */,
 				42C3DCE02C5A877B00973681 /* ThreatRow.swift */,
-				42C3DCE22C5A87B200973681 /* ThreatStatus.swift */,
+				42C3DCE22C5A87B200973681 /* ThreatOverview.swift */,
 				42C3DCE42C5A892D00973681 /* Dimens.swift */,
 				42C3DCF42C5CEFE200973681 /* SystemImage.swift */,
 			);
@@ -178,10 +181,11 @@
 			files = (
 				42B973FC2C57C4380040D9BC /* ThreatList.swift in Sources */,
 				42C3DCF52C5CEFE200973681 /* SystemImage.swift in Sources */,
-				42C3DCE32C5A87B200973681 /* ThreatStatus.swift in Sources */,
+				42C3DCE32C5A87B200973681 /* ThreatOverview.swift in Sources */,
 				42C3DCE12C5A877B00973681 /* ThreatRow.swift in Sources */,
 				42C3DCE52C5A892D00973681 /* Dimens.swift in Sources */,
 				42B973FA2C57C4380040D9BC /* SecurityToolkitExampleApp.swift in Sources */,
+				882CEB5F2D536FF0005D7171 /* ThreatViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +348,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -425,7 +429,7 @@
 			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.5.0;
+				minimumVersion = 7.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
