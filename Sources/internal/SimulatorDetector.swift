@@ -1,15 +1,16 @@
 import Foundation
 
 // MARK: - Internal
-internal final class SimulatorDetection {
+internal final class SimulatorDetector {
     
-    static func threatDetected() -> Bool {
-        runsInSimulator()
+    static func threatDetected() -> ThreatStatus {
+        let check = runsInSimulator()
+        return check ? .present : .notPresent
     }
 }
 
 // MARK: - Private
-fileprivate extension SimulatorDetection {
+fileprivate extension SimulatorDetector {
     
     /// Check if the app is running in a simulator
     static func runsInSimulator() -> Bool {
