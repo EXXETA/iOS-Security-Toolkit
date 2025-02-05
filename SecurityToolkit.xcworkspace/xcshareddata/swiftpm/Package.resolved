@@ -1,13 +1,13 @@
 {
-  "originHash" : "bb1fde65ac9d8228a88914af6416b18259fe2171aba8051e9d0785a832c7af82",
+  "originHash" : "3d50cc595c2a948bdc9828b418ac81066c7ea0247c8f72b21d19749ee60ed4e3",
   "pins" : [
     {
       "identity" : "r.swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mac-cain13/R.swift.git",
       "state" : {
-        "revision" : "384eab88d1a0b98ac96f4819e50a4308ecd5359f",
-        "version" : "7.5.0"
+        "revision" : "a9abc6b0afe0fc4a5a71e1d7d2872143dff2d2f1",
+        "version" : "7.8.0"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tomlokhorst/XcodeEdit",
       "state" : {
-        "revision" : "b6b67389a0f1a6fdd9c6457a8ab5b02eaab13c5c",
-        "version" : "2.9.2"
+        "revision" : "0e550cdee72844b35431afc3a1e176042be6d0f0",
+        "version" : "2.13.0"
       }
     }
   ],
