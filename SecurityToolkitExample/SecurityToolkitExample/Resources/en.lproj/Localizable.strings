@@ -17,5 +17,7 @@
 "threat.list.description" = "Here is a list of the threats that could put you at risk";
 
 // MARK: Threat Row
+"threat.row.state.initial" = "INITIAL";
 "threat.row.state.detected" = "DETECTED";
 "threat.row.state.safe" = "SAFE";
+"threat.row.state.exception" = "EXCEPTION";

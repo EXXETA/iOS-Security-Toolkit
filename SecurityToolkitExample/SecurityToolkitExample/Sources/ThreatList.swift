@@ -1,11 +1,14 @@
 import SwiftUI
+import SecurityToolkit
 
 struct ThreatList: View {
      
+    @ObservedObject private var vm = ThreatViewModel.shared
+    
     var body: some View {
         List {
             Section {
-                ForEach(ThreatStatus.threats, id: \.self) {
+                ForEach(vm.threatOverview, id: \.self) {
                     ThreatRow(threat: $0)
                 }
             } header: {
