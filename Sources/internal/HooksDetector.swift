@@ -2,15 +2,16 @@ import Foundation
 import MachO
 
 // MARK: - Internal
-internal final class HooksDetection {
+internal final class HooksDetector {
     
-    static func threatDetected() -> Bool {
-        hasDynamicLibrariesLoaded() || hasSuspiciousFiles() || hasOpenPorts()
+    static func threatDetected() -> ThreatStatus {
+        let check = hasDynamicLibrariesLoaded() || hasSuspiciousFiles() || hasOpenPorts()
+        return check ? .present : .notPresent
     }
 }
 
 // MARK: - Private
-fileprivate extension HooksDetection {
+fileprivate extension HooksDetector {
     
     /// Check has loaded dynamic libraries
     private static func hasDynamicLibrariesLoaded() -> Bool {
