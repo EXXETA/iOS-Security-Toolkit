@@ -1,6 +1,12 @@
 iOS Mobile Security Toolkit Library Changelog
 ===========================
 
+# 1.1.0
+* Added device password protection detection
+* Added hardware security detection
+* Added debugger detection
+
+
 # 1.0.1
 
 * Removed xcframework and made source code public
