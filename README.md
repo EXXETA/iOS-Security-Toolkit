@@ -35,7 +35,7 @@ Swift Package Manager
 ### SPM
 
 `.package(url: "https://github.com/EXXETA/iOS-Security-Toolkit.git", from: 
-"1.0.1")`
+"1.1.0")`
 
 ## CocoaPods
 
@@ -54,6 +54,9 @@ Use the gettable variables to get current status of the device:
 - `ThreatDetectionCenter.areRootPrivilegesDetected: Bool`
 - `ThreatDetectionCenter.areHooksDetected: Bool`
 - `ThreatDetectionCenter.isSimulatorDetected: Bool`
+- `ThreatDetectionCenter.isDebuggerDetected: Bool`
+- `ThreatDetectionCenter.isDeviceWithoutPasscodeDetected: Bool`
+- `ThreatDetectionCenter.isHardwareProtectionUnavailable: Bool`
 
 ### Async Stream API
 
