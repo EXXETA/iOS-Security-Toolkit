@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SecurityToolkit'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'Simple and easy security threat detector in Swift'
   s.homepage         = 'https://github.com/EXXETA/iOS-Security-Toolkit'
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '13.0'
 	s.swift_version = '5'
 
-  s.source_files = 'Sources/**'
+  s.source_files = 'Sources/**/*'
 	
 end
