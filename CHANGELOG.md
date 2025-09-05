@@ -1,6 +1,10 @@
 iOS Mobile Security Toolkit Library Changelog
 ===========================
 
+# 1.1.1
+* Fixed podspec deployment
+
+
 # 1.1.0
 * Added device password protection detection
 * Added hardware security detection
