@@ -67,6 +67,10 @@ Use Async Stream API to get detected threats asynchronously:
 
 - `ThreatDetectionCenter.threats: AsyncStream<Threat>`
 
+## Testing
+
+To run the available tests locally or in the pipeline use `xcodebuild test -scheme SecurityToolkitTests -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.0'`
+
 ## Roadmap
 
 Next features to be implemented:
