@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "2A48008B-945B-4FC4-B949-3BD5FEAAF6CF",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SecurityToolkitExample\/SecurityToolkitExample.xcodeproj",
+        "identifier" : "881894992E71B2AA00989BA6",
+        "name" : "SecurityToolkitExampleTests"
+      }
+    }
+  ],
+  "version" : 1
+}

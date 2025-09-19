@@ -2,18 +2,18 @@ import Foundation
 import LocalAuthentication
 
 // MARK: - Internal
-internal final class HardwareSecurityDetection {
+internal final class HardwareSecurityDetector {
     
-    static func threatDetected() -> Bool {
-        !isSecureEnclaveAvailable()
+    static func threatDetected() -> ThreatStatus {
+        isSecureEnclaveAvailable()
     }
 }
 
 // MARK: - Private
-fileprivate extension HardwareSecurityDetection {
+fileprivate extension HardwareSecurityDetector {
     
     /// See https://stackoverflow.com/a/49318485/7484013
-    private static func isSecureEnclaveAvailable() -> Bool {
+    private static func isSecureEnclaveAvailable() -> ThreatStatus {
         var error: NSError?
 
         /// Policies can have certain requirements which, when not satisfied,
@@ -25,11 +25,19 @@ fileprivate extension HardwareSecurityDetection {
             error: &error
         )
         if result {
-            return true
+            return .notPresent
         } else if let error {
-            return error.code != LAError.biometryNotAvailable.rawValue
+            if error.code != LAError.biometryNotAvailable.rawValue {
+                return .exception(
+                    ThreatDetectionException.checkNotPossible(
+                        "Unexpected LAError: \(error.localizedDescription)"
+                    )
+                )
+            } else {
+                return .present
+            }
         } else {
-            return false
+            return .present
         }
     }
 }

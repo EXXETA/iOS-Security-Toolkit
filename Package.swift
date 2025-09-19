@@ -16,6 +16,11 @@ let package = Package(
     targets: [
         .target(
             name: "SecurityToolkit"
-        )
+        ),
+        .testTarget(
+             name: "SecurityToolkitTests",
+             dependencies: ["SecurityToolkit"],
+             path: "Tests"
+         )
     ]
 )

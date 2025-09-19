@@ -1,6 +1,10 @@
 iOS Mobile Security Toolkit Library Changelog
 ===========================
 
+# 2.0.0
+* Introduced async API: threatReports
+
+
 # 1.1.1
 * Fixed podspec deployment
 
